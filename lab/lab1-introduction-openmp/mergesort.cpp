@@ -16,9 +16,9 @@ void assertExo(const std::vector<int> & A) {
     }
   }
   if(flag) {
-    std::cout << "It works ! " << std::endl;
+    std::cout << "Ça marche les cocos ! " << std::endl;
   } else {
-    std::cout << "It does not work ! :(" << std::endl;
+    std::cout << "Ça ne marche pas ! :(" << std::endl;
   }  
 }
 
@@ -61,45 +61,10 @@ int main()
   } 
 
   auto start = std::chrono::high_resolution_clock::now();
-#pragma omp parallel
-  {
-#pragma omp sections
-    {
-#pragma omp section
-      {
-        std::sort(A.begin(), A.begin()+(N/4));
-      }
-#pragma omp section
-      {
-        std::sort(A.begin()+(N/4), A.begin()+(N/2));
-      }
-#pragma omp section
-      {
-        std::sort(A.begin()+(N/2), A.begin()+(3*N/4));
-      }
-#pragma omp section
-      {
-        std::sort(A.begin()+(3*N/4), A.end());
-      }
-    }
-
-#pragma omp sections
-    {
-#pragma omp section
-      {
-        merge(&temp[0], &A[0], N/4, &A[N/4], N/2-N/4);
-      }
-#pragma omp section
-      {
-        merge(&temp[N/2], &A[N/2], 3*N/4-N/2, &A[3*N/4], N-3*N/4);
-      }
-    }
-  }
-
-  merge(&A[0], &temp[0], N/2, &temp[N/2], N-N/2);
+  //TODO:
   
-  std::chrono::duration<double> time = std::chrono::high_resolution_clock::now() - start;
-  std::cout << "Time: " << time.count() << "s\n";
+  std::chrono::duration<double> temps = std::chrono::high_resolution_clock::now() - start;
+  std::cout << "Temps de calcul: " << temps.count() << "s\n";
 
   assertExo(A);
   return 0;
