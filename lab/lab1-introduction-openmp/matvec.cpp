@@ -65,7 +65,7 @@ int main(int argc, char **argv)
   double acceleration = 0.0;
   double efficiency = 0.0;
   // A FAIRE ...
-  // TODO
+  // TO DO ...
   std::cout << "Acceleration: " << acceleration << std::endl;
   std::cout << "Efficiency: " << efficiency << std::endl;
 

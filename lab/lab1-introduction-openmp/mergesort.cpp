@@ -16,9 +16,9 @@ void assertExo(const std::vector<int> & A) {
     }
   }
   if(flag) {
-    std::cout << "Ça marche les cocos ! " << std::endl;
+    std::cout << "It works ! " << std::endl;
   } else {
-    std::cout << "Ça ne marche pas ! :(" << std::endl;
+    std::cout << "It does not work ! :(" << std::endl;
   }  
 }
 
@@ -58,13 +58,13 @@ int main()
 
   for (int i = 0; i < N; i++) {
       A[i] = std::rand();
-  } 
+  }
 
   auto start = std::chrono::high_resolution_clock::now();
   //TODO:
   
-  std::chrono::duration<double> temps = std::chrono::high_resolution_clock::now() - start;
-  std::cout << "Temps de calcul: " << temps.count() << "s\n";
+  std::chrono::duration<double> time = std::chrono::high_resolution_clock::now() - start;
+  std::cout << "Time: " << time.count() << "s\n";
 
   assertExo(A);
   return 0;
