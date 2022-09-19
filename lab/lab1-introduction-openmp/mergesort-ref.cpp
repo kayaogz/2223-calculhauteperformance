@@ -16,9 +16,9 @@ void assertExo(const std::vector<int> & A) {
     }
   }
   if(flag) {
-    std::cout << "Ça marche les cocos ! " << std::endl;
+    std::cout << "It works ! " << std::endl;
   } else {
-    std::cout << "Ça ne marche pas ! :(" << std::endl;
+    std::cout << "It does not work ! :(" << std::endl;
   }  
 }
 
@@ -98,8 +98,8 @@ int main()
 
   merge(&A[0], &temp[0], N/2, &temp[N/2], N-N/2);
   
-  std::chrono::duration<double> temps = std::chrono::high_resolution_clock::now() - start;
-  std::cout << "Temps de calcul: " << temps.count() << "s\n";
+  std::chrono::duration<double> time = std::chrono::high_resolution_clock::now() - start;
+  std::cout << "Time: " << time.count() << "s\n";
 
   assertExo(A);
   return 0;
