@@ -39,7 +39,7 @@ int main()
   // La version sequentielle
   auto start = std::chrono::high_resolution_clock::now();
   goldbachVrai = 1;
-  for (int i = 2; i < N; i += 2) { 
+  for (int i = 4; i < N; i += 2) { 
     numPairs[i] = goldbach(i);
     if (numPairs[i] == 0) { goldbachVrai = 0; }
   }
